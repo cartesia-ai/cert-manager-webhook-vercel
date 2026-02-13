@@ -7,15 +7,15 @@
 # solve the DNS01 challenge.
 # This group name should be **unique**, hence using your own company's domain
 # here is recommended.
-groupName: acme.rhythmbhiwani.in
+groupName: acme.cartesia.ai
 
 certManager:
   namespace: cert-manager
   serviceAccountName: cert-manager
 
 image:
-  repository: ghcr.io/rhythmbhiwani/cert-manager-webhook-vercel
-  tag: v1.0.0
+  repository: ghcr.io/cartesia-ai/cert-manager-webhook-vercel
+  tag: latest
   pullPolicy: IfNotPresent
 
 nameOverride: ""

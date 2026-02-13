@@ -2,7 +2,7 @@ GO ?= $(shell which go)
 OS ?= $(shell $(GO) env GOOS)
 ARCH ?= $(shell $(GO) env GOARCH)
 
-IMAGE_NAME := "rhythmbhiwani/cert-manager-webhook-vercel"
+IMAGE_NAME := "ghcr.io/cartesia-ai/cert-manager-webhook-vercel"
 IMAGE_TAG := "latest"
 
 OUT := $(shell pwd)/_out
