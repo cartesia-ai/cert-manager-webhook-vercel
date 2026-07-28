@@ -82,7 +82,9 @@ func getVercelDomains(c *vercelDNSProviderSolver, apiToken string, queryParams m
 				Name string `json:"name"`
 			} `json:"domains"`
 			Pagination struct {
-				Next string `json:"next"`
+				// Vercel returns the cursor as a millisecond timestamp
+				// (number) or null; json.Number also tolerates strings.
+				Next json.Number `json:"next"`
 			} `json:"pagination"`
 		}
 
@@ -94,10 +96,16 @@ func getVercelDomains(c *vercelDNSProviderSolver, apiToken string, queryParams m
 			domains = append(domains, domain.Name)
 		}
 
-		if data.Pagination.Next == "" {
+		next := data.Pagination.Next.String()
+		if next == "" {
 			break
 		}
-		url = data.Pagination.Next
+		// The cursor is not a URL: subsequent pages are requested by passing
+		// it back as the `until` query parameter.
+		if queryParams == nil {
+			queryParams = map[string]string{}
+		}
+		queryParams["until"] = next
 	}
 
 	return domains, nil
