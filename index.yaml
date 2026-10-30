@@ -2,6 +2,15 @@ apiVersion: v1
 entries:
   cert-manager-webhook-vercel:
   - apiVersion: v2
+    appVersion: v1.1.4
+    created: "2026-10-30T23:03:34.932236659Z"
+    description: A Helm chart for cert-manager-webhook-vercel
+    digest: 2b87b48e3149a9c81acdc14682d5e1f384df4d74c7b44b6badd2dbe43e245cab
+    name: cert-manager-webhook-vercel
+    urls:
+    - https://github.com/cartesia-ai/cert-manager-webhook-vercel/releases/download/cert-manager-webhook-vercel-v1.1.4/cert-manager-webhook-vercel-v1.1.4.tgz
+    version: v1.1.4
+  - apiVersion: v2
     appVersion: v1.1.2
     created: "2026-07-28T20:06:55.725500141Z"
     description: A Helm chart for cert-manager-webhook-vercel
@@ -10,4 +19,4 @@ entries:
     urls:
     - https://github.com/cartesia-ai/cert-manager-webhook-vercel/releases/download/cert-manager-webhook-vercel-v1.1.2/cert-manager-webhook-vercel-v1.1.2.tgz
     version: v1.1.2
-generated: "2026-07-28T20:06:55.725505126Z"
+generated: "2026-10-30T23:03:34.932241636Z"
